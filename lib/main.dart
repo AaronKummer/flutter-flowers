@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:developer';
+import 'package:flutter/foundation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +12,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    log('welcome to the flower picker');
+    debugPrint('welcome to the flower picker');
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter flowers',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter flower picker'),
     );
   }
 }
@@ -52,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
+      log('picked flower');
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
@@ -96,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'you have collected this many flowers:',
             ),
             Text(
               '$_counter',
